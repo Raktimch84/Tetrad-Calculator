@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raktim's Calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Raktim's Calculator</h2>
+            <label for="text1">Enter first number</label>
+            <input type="text" name="enter" id="text1">
+            <br>
+            <label for="text2">Enter second number</label>
+            <input type="text" name="enter2" id="text2">
+            <br>
+            <label for="sel1">Enter operation</label>
+            <select name="sel1" id="sel1">
+                <option value="">Select</option>
+                <option value="add">Add</option>
+                <option value="sub">Subtract</option>
+                <option value="divide">Divide</option>
+                <option value="mult">Multiply</option>
+            </select>
+            <br>
+            <br>
+            <button id="coda" onclick="strike()">Click</button>
+            <br>
+            <p id="lamb">* This is the result field ^.^ *</p>
+        </div>
+        <script>
+            const calc = (a,b,oper) =>{
+                return oper(a,b);
+            }
+            const add=(a,b) =>
+            {
+                return a+b;
+            }
+            const sub=(a,b) =>
+            {
+                return a+b;
+            }
+            const mult=(a,b) =>
+            {
+                return a+b;
+            }
+            const divide=(a,b) =>
+            {
+                return a+b;
+            }
+            function strike() {
+                const a= +document.getElementById('text1').value;
+                const b= +document.getElementById('text2').value;
+                const oper=document.getElementById('sel1').value;
+                switch(oper)
+                {
+                    case "add":
+                    document.getElementById('lamb').innerHTML =`The Answer is ${a+b}`; 
+                    break
+                    case "sub":
+                    document.getElementById('lamb').innerHTML =`The Answer is ${Math.abs(a-b)}`;
+                    break
+                    case "mult":
+                    document.getElementById('lamb').innerHTML =`The Answer is ${a*b}`;
+                    break
+                    case "divide":
+                    document.getElementById('lamb').innerHTML =`The Answer is ${a/b}`;
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
